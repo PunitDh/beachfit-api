@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index, :show]
 
   # GET /posts
   def index
@@ -16,9 +17,9 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-
+    # raise params.inspect
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, status: :created#, location: @post
     else
       render json: @post.errors, status: :unprocessable_entity
     end
@@ -46,6 +47,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :blog_id)
     end
 end

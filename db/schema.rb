@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_111805) do
+ActiveRecord::Schema.define(version: 2021_07_13_012752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2021_07_11_111805) do
     t.text "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "faq_id", null: false
+    t.index ["faq_id"], name: "index_items_on_faq_id"
+  end
+
+  create_table "jwt_deny_lists", force: :cascade do |t|
+    t.string "jti", null: false
+    t.datetime "exp", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "plans", force: :cascade do |t|
@@ -42,6 +51,8 @@ ActiveRecord::Schema.define(version: 2021_07_11_111805) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "pricing_id", null: false
+    t.index ["pricing_id"], name: "index_plans_on_pricing_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -49,6 +60,8 @@ ActiveRecord::Schema.define(version: 2021_07_11_111805) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "blog_id", null: false
+    t.index ["blog_id"], name: "index_posts_on_blog_id"
   end
 
   create_table "pricings", force: :cascade do |t|
@@ -72,5 +85,8 @@ ActiveRecord::Schema.define(version: 2021_07_11_111805) do
 
   add_foreign_key "blogs", "users"
   add_foreign_key "faqs", "users"
+  add_foreign_key "items", "faqs"
+  add_foreign_key "plans", "pricings"
+  add_foreign_key "posts", "blogs"
   add_foreign_key "pricings", "users"
 end
