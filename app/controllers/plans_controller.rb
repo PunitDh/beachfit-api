@@ -1,10 +1,10 @@
 class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  # before_action :authenticate_user!, except: [:index, :show]
 
   # GET /plans
   def index
-    @plans = Plan.all
+    @plans = Plan.all.order(:id)
 
     render json: @plans
   end
@@ -19,7 +19,7 @@ class PlansController < ApplicationController
     @plan = Plan.new(plan_params)
 
     if @plan.save
-      render json: @plan, status: :created, location: @plan
+      render json: @plan, status: :created
     else
       render json: @plan.errors, status: :unprocessable_entity
     end
@@ -47,6 +47,6 @@ class PlansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def plan_params
-      params.require(:plan).permit(:name, :price, :description)
+      params.require(:plan).permit(:name, :price, :description, :pricing_id, :sessions_per_week, :session_times)
     end
 end

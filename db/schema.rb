@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_012752) do
+ActiveRecord::Schema.define(version: 2021_07_14_072325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 2021_07_13_012752) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "passes", force: :cascade do |t|
+    t.string "name"
+    t.string "total_cost"
+    t.string "class_cost"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "pricing_id", null: false
+    t.index ["pricing_id"], name: "index_passes_on_pricing_id"
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -52,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_07_13_012752) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "pricing_id", null: false
+    t.string "sessions_per_week"
+    t.string "session_times"
     t.index ["pricing_id"], name: "index_plans_on_pricing_id"
   end
 
@@ -86,6 +98,7 @@ ActiveRecord::Schema.define(version: 2021_07_13_012752) do
   add_foreign_key "blogs", "users"
   add_foreign_key "faqs", "users"
   add_foreign_key "items", "faqs"
+  add_foreign_key "passes", "pricings"
   add_foreign_key "plans", "pricings"
   add_foreign_key "posts", "blogs"
   add_foreign_key "pricings", "users"
