@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  resources :plans
-  resources :items
-  resources :posts
-  resources :pricings
-  resources :faqs
-  resources :blogs
-  devise_for :users
-  # root to: "/"
-  # get ""
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+
+  resources :pricings do
+    resources :plans
+  end
+  
+  resources :faqs do
+    resources :items
+  end
+
+  resources :blogs do
+    resources :posts
+  end
 end

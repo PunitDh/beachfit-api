@@ -1,5 +1,6 @@
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /faqs
   def index
