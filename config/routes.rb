@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :pricings do
     resources :plans
+    resources :passes
   end
   
   resources :faqs do
