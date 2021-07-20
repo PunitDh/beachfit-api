@@ -8,6 +8,12 @@ class TestimonialsController < ApplicationController
     render json: @testimonials
   end
 
+  def sample
+    @testimonials = Testimonial.all
+
+    render json: @testimonials.sample(params[:number].to_i)
+  end
+
   # GET /testimonials/1
   def show
     render json: @testimonial
@@ -46,6 +52,6 @@ class TestimonialsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def testimonial_params
-      params.require(:testimonial).permit(:name, :body)
+      params.require(:testimonial).permit(:name, :body, :image)
     end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :testimonials
+  
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   resources :pricings do
@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   resources :blogs do
     resources :posts
   end
+
+  resources :testimonials
+  get "/testimonials/sample/:number", to: "testimonials#sample"
 end
