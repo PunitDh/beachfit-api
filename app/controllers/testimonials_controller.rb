@@ -11,7 +11,14 @@ class TestimonialsController < ApplicationController
   def sample
     @testimonials = Testimonial.all
 
-    render json: @testimonials.sample(params[:number].to_i)
+    selected = []
+
+    while(selected.length < params[:number].to_i) do
+     selected << @testimonials.sample
+     selected.uniq!
+    end
+    
+    render json: selected
   end
 
   # GET /testimonials/1
@@ -24,7 +31,7 @@ class TestimonialsController < ApplicationController
     @testimonial = Testimonial.new(testimonial_params)
 
     if @testimonial.save
-      render json: @testimonial, status: :created, location: @testimonial
+      render json: @testimonial, status: :created
     else
       render json: @testimonial.errors, status: :unprocessable_entity
     end
