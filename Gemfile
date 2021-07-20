@@ -42,3 +42,4 @@ gem 'devise'
 gem 'figaro'
 
 gem 'devise-jwt'
+gem "aws-sdk-s3", "~> 1.96"

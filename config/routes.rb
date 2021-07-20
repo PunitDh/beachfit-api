@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :testimonials
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   resources :pricings do
