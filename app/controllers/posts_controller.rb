@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.all.order(:created_at)
 
     render json: @posts
   end
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     # raise params.inspect
     if @post.save
-      render json: @post, status: :created#, location: @post
+      render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
