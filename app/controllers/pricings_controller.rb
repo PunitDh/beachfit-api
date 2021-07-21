@@ -19,7 +19,7 @@ class PricingsController < ApplicationController
     @pricing = Pricing.new(pricing_params)
 
     if @pricing.save
-      render json: @pricing, status: :created, location: @pricing
+      render json: @pricing, status: :created
     else
       render json: @pricing.errors, status: :unprocessable_entity
     end

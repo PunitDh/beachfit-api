@@ -19,7 +19,7 @@ class FaqsController < ApplicationController
     @faq = Faq.new(faq_params)
 
     if @faq.save
-      render json: @faq, status: :created, location: @faq
+      render json: @faq, status: :created
     else
       render json: @faq.errors, status: :unprocessable_entity
     end
