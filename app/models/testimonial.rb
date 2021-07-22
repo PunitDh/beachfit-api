@@ -4,7 +4,7 @@ class Testimonial < ApplicationRecord
 
     private
         def attach_image
-            if image.exists?
+            unless image.url.nil?
                 @image_url = image.url
             end
         end
