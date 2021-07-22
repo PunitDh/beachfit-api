@@ -17,6 +17,10 @@ class TestimonialsController < ApplicationController
      selected << @testimonials.sample
      selected.uniq!
     end
+
+    @testimonials.each do |testimonial|
+      
+    end
     
     render json: selected
   end
@@ -55,6 +59,7 @@ class TestimonialsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_testimonial
       @testimonial = Testimonial.find(params[:id])
+      
     end
 
     # Only allow a list of trusted parameters through.
