@@ -19,7 +19,7 @@ class TestimonialsController < ApplicationController
     end
 
     @testimonials.each do |testimonial|
-      if testimonial.image_url.nil? and testimonial.image.exists?
+      if testimonial.image_url.nil? and (not testimonial.image.url.nil?)
         testimonial.image_url = testimonial.image.url
       end
     end
