@@ -310,6 +310,6 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
   config.jwt do |jwt|
     jwt.secret = ENV['DEVISE_SECRET']
-    jwt.expiration_time = 10.minutes.to_i
+    jwt.expiration_time = 24.hours.to_i
   end
 end
