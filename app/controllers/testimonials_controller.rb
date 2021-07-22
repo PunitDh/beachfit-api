@@ -19,7 +19,9 @@ class TestimonialsController < ApplicationController
     end
 
     @testimonials.each do |testimonial|
-      
+      if testimonial.image_url.nil? and testimonial.image.exists?
+        testimonial.image_url = testimonial.image.url
+      end
     end
     
     render json: selected
