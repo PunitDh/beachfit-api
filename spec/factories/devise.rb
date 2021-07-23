@@ -3,7 +3,7 @@ FactoryBot.define do
         email {"test@test.com"}
         password {"qwerty"}
         password_confirmation {"qwerty"}
-        role { "Admin"}
+        # role { "Admin"}
     end
 
     
