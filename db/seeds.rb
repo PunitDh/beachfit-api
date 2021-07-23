@@ -6,7 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Blog.create(user_id: 1)
+
+Faq.create(user_id: 1)
+
+Pricing.create(user_id: 1)
+
 Item.create([
+	{
+		question: "How long do the sessions last for?",
+			answer: "Each one goes for 40 minutes.",
+			faq_id: 1
+	},
+	{
+		question: "What do I need to bring?",
+			answer: "Water, a mat/towel and you! All equipment needed for your workout is provided. Just make sure that you wear trainers and clothing you are comfortable exercising in.",
+			faq_id: 1
+	},
 	{
 		question: "What does an average session involve?",
 			answer: "Every session is different and is responsive to the needs of the participants. But an average workout will include strength / resistance training, cardio fitness, stretching and flexibility.
@@ -20,7 +36,7 @@ Item.create([
 			faq_id: 1
 	},
 	{
-		question: "I don't have much ",
+		question: "I don’t have much fitness experience – are these sessions right for me?",
 		answer: "YES! All sessions are designed to match participants’ fitness levels, and we definitely cater for fitness newbies as well as more experienced people. If you’ve got a specific concern, please get in touch for a chat.",
 		faq_id: 1
 	},
@@ -57,6 +73,29 @@ Plan.create (
 			sessions_per_week: "2 sessions per week",
 			session_times: "(Pick two): 6am or 6:45am Mon / Wed / Fri",
 			description: "Perfect if you can’t quite commit to three sessions per week, but still want the extra motivation of training with a group.",
+			pricing_id: 1
+		}
+	]
+)
+
+Pass.create(
+	[
+		{
+			name: "Ten Class Pass",
+			total_cost: "$180 for ten classes",
+			class_cost: "$18 per class",
+			pricing_id: 1
+		},
+		{
+			name: "Five Class Pass",
+			total_cost: "$100 for ten classes",
+			class_cost: "$20 per class",
+			pricing_id: 1
+		},
+		{
+			name: "Drop-In Class",
+			total_cost: "$28 per class",
+			class_cost: "",
 			pricing_id: 1
 		}
 	]
@@ -124,30 +163,20 @@ testimonials =
 		}
 	]
 
-	photo_filenames = ["Alicia - Photo.jpg", "Dorit - Photo.jpg", "Kat - Photo.jpg", "Lainy - Photo.jpg", "Shona - Photo.JPG", "Tom - Photo.jpg", "Trine - Photo.jpeg"]
+photo_filenames = ["Alicia - Photo.jpg", "Dorit - Photo.jpg", "Kat - Photo.jpg", "Lainy - Photo.jpg", "Shona - Photo.JPG", "Tom - Photo.jpg", "Trine - Photo.jpeg"]
 
-	photos = photo_filenames.map do |photo|
-		Rails.root.join("public/images", photo)
+photos = photo_filenames.map do |photo|
+	Rails.root.join("public/images", photo)
+end
+
+full_testimonials = testimonials.map.with_index do |testimonial, index|
+	Testimonial.new(name: testimonials[index][:name], body: testimonials[index][:body])
+end
+
+full_testimonials.each.with_index do |full_testimonial, index|
+	File.open(photos[index]) do |file|
+		full_testimonial.image.attach(io: file, filename: file.to_s)
+		full_testimonial.save
+		file.close
 	end
-
-	# photos = Rails.root.join("/public/images", "*.{jpg,jpeg,JPG,JPEG,png,gif}")
-
-	full_testimonials = testimonials.map.with_index do |testimonial, index|
-		Testimonial.new(name: testimonials[index][:name], body: testimonials[index][:body])
-	end
-
-	full_testimonials.each.with_index do |full_testimonial, index|
-		File.open(photos[index]) do |file|
-			full_testimonial.image.attach(io: file, filename: file.to_s)
-			full_testimonial.save
-			file.close
-		end
-	end
-
-	# photos.each.with_index do |photo, index|
-	# 	File.open(photo) do |file|
-	# 		Testimonial.new(name: testimonials[index][:name], body: testimonials[index][:body]) do |k|
-	# 			k.photo.attach(io: file, filename: path.basename)
-	# 		end.save!
-	# 	end
-	# end
+end
