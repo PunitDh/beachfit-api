@@ -8,10 +8,10 @@ FactoryBot.define do
 
     
     factory :plan do
-        name {"Abc"}
+        name {"Abcd"}
     end
 
     factory :pass do
-        name {"Def"}
+        name {"Defg"}
     end
 end

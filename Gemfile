@@ -34,22 +34,6 @@ group :development do
   gem 'listen', '~> 3.3'
 end
 
-group :test do
-    gem 'rspec-rails'
-end
-
-group :test do
-    gem 'factory_bot_rails'
-end
-
-group :test do
-    gem 'faker'
-end
-
-group :test do
-    gem 'jsonapi-rspec'
-end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -59,3 +43,7 @@ gem 'figaro'
 
 gem 'devise-jwt'
 gem "aws-sdk-s3", "~> 1.96"
+
+gem 'faker'
+gem 'factory_bot_rails'
+gem 'rspec-rails'

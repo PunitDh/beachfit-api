@@ -70,7 +70,7 @@ GEM
     aws-sdk-kms (1.44.0)
       aws-sdk-core (~> 3, >= 3.112.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.96.1)
+    aws-sdk-s3 (1.96.2)
       aws-sdk-core (~> 3, >= 3.112.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)
@@ -119,11 +119,8 @@ GEM
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jmespath (1.4.0)
-    jsonapi-rspec (0.0.11)
-      rspec-core
-      rspec-expectations
     jwt (2.2.3)
-    listen (3.5.1)
+    listen (3.6.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.10.0)
@@ -236,7 +233,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   figaro
-  jsonapi-rspec
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
