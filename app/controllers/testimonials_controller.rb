@@ -17,6 +17,12 @@ class TestimonialsController < ApplicationController
      selected << @testimonials.sample
      selected.uniq!
     end
+
+    @testimonials.each do |testimonial|
+      if testimonial.image_url.nil? and (not testimonial.image.url.nil?)
+        testimonial.image_url = testimonial.image.url
+      end
+    end
     
     render json: selected
   end
@@ -55,6 +61,7 @@ class TestimonialsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_testimonial
       @testimonial = Testimonial.find(params[:id])
+      
     end
 
     # Only allow a list of trusted parameters through.

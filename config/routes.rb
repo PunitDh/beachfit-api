@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 's3/direct_post'
   devise_for :users, controllers: { sessions: 'users/sessions', passwords: 'passwords/passwords' }
 
   resources :pricings do
