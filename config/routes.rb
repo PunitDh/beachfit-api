@@ -18,3 +18,4 @@ Rails.application.routes.draw do
   resources :testimonials
   get "/testimonials/sample/:number", to: "testimonials#sample"
 end
+
