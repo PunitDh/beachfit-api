@@ -23,13 +23,13 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    @post.image_url = @post.image.url
     render json: @post
   end
 
   # POST /posts
   def create
     @post = Post.new(post_params)
-    # raise params.inspect
     if @post.save
       render json: @post, status: :created
     else
@@ -59,6 +59,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :blog_id, :image, :video, :image_url)
+      params.permit(:title, :body, :blog_id, :image, :video, :image_url)
     end
 end
