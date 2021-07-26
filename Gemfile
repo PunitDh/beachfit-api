@@ -43,3 +43,7 @@ gem 'figaro'
 
 gem 'devise-jwt'
 gem "aws-sdk-s3", "~> 1.96"
+
+gem 'faker'
+gem 'factory_bot_rails'
+gem 'rspec-rails'
