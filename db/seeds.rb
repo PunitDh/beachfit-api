@@ -6,100 +6,100 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Blog.create(user_id: 1)
+Blog.create(user_id: 1)
 
-# Faq.create(user_id: 1)
+Faq.create(user_id: 1)
 
-# Pricing.create(user_id: 1)
+Pricing.create(user_id: 1)
 
-# Item.create([
-# 	{
-# 		question: "How long do the sessions last for?",
-# 			answer: "Each one goes for 40 minutes.",
-# 			faq_id: 1
-# 	},
-# 	{
-# 		question: "What do I need to bring?",
-# 			answer: "Water, a mat/towel and you! All equipment needed for your workout is provided. Just make sure that you wear trainers and clothing you are comfortable exercising in.",
-# 			faq_id: 1
-# 	},
-# 	{
-# 		question: "What does an average session involve?",
-# 			answer: "Every session is different and is responsive to the needs of the participants. But an average workout will include strength / resistance training, cardio fitness, stretching and flexibility.
+Item.create([
+	{
+		question: "How long do the sessions last for?",
+			answer: "Each one goes for 40 minutes.",
+			faq_id: 1
+	},
+	{
+		question: "What do I need to bring?",
+			answer: "Water, a mat/towel and you! All equipment needed for your workout is provided. Just make sure that you wear trainers and clothing you are comfortable exercising in.",
+			faq_id: 1
+	},
+	{
+		question: "What does an average session involve?",
+			answer: "Every session is different and is responsive to the needs of the participants. But an average workout will include strength / resistance training, cardio fitness, stretching and flexibility.
 
-# 			We also use a variety of equipment such as TRX, kettlebells, resistance bands, sand bags, battle ropes and more, so that you can challenge your body in new and exciting ways.",
-# 			faq_id: 1
-# 	},
-# 	{
-# 		question: "Where do you meet?",
-# 			answer: "We meet on Coogee Beach. Head to the main steps, in the centre of the beach and you will see our trainers setting up from here. We usually set up just to the left of these steps, as you look towards the ocean.",
-# 			faq_id: 1
-# 	},
-# 	{
-# 		question: "I don’t have much fitness experience – are these sessions right for me?",
-# 		answer: "YES! All sessions are designed to match participants’ fitness levels, and we definitely cater for fitness newbies as well as more experienced people. If you’ve got a specific concern, please get in touch for a chat.",
-# 		faq_id: 1
-# 	},
-# 	{
-# 		question: "I'm very fit and am looking for a challenge - are these sessions right for me?",
-# 		answer: "We love working with people who want to push their physical boundaries and challenge themselves in new ways. At the end of a BeachFit and Wellbeing session, you will have maximised your potential and worked to your limits.",
-# 		faq_id: 1
-# 	},
-# 	{
-# 		question: "I've got a specific health condition or injury - can I still sign up?",
-# 		answer: "Generally yes, but it’s always good to chat first. Please send us an email or give us a call and we can determine the best option for your particular needs.",
-# 		faq_id: 1
-# 	},
-# 	{
-# 		question: "Do you still train in bad weather?",
-# 		answer: "Yes, we train in all weather. However, in the case of lightning or electrical storms, we postpone to another day. We will be in touch by text and via our Facebook group before our session if this needs to happen.",
-# 		faq_id: 1
-# 	}
-# ])
+			We also use a variety of equipment such as TRX, kettlebells, resistance bands, sand bags, battle ropes and more, so that you can challenge your body in new and exciting ways.",
+			faq_id: 1
+	},
+	{
+		question: "Where do you meet?",
+			answer: "We meet on Coogee Beach. Head to the main steps, in the centre of the beach and you will see our trainers setting up from here. We usually set up just to the left of these steps, as you look towards the ocean.",
+			faq_id: 1
+	},
+	{
+		question: "I don’t have much fitness experience – are these sessions right for me?",
+		answer: "YES! All sessions are designed to match participants’ fitness levels, and we definitely cater for fitness newbies as well as more experienced people. If you’ve got a specific concern, please get in touch for a chat.",
+		faq_id: 1
+	},
+	{
+		question: "I'm very fit and am looking for a challenge - are these sessions right for me?",
+		answer: "We love working with people who want to push their physical boundaries and challenge themselves in new ways. At the end of a BeachFit and Wellbeing session, you will have maximised your potential and worked to your limits.",
+		faq_id: 1
+	},
+	{
+		question: "I've got a specific health condition or injury - can I still sign up?",
+		answer: "Generally yes, but it’s always good to chat first. Please send us an email or give us a call and we can determine the best option for your particular needs.",
+		faq_id: 1
+	},
+	{
+		question: "Do you still train in bad weather?",
+		answer: "Yes, we train in all weather. However, in the case of lightning or electrical storms, we postpone to another day. We will be in touch by text and via our Facebook group before our session if this needs to happen.",
+		faq_id: 1
+	}
+])
 
-# Plan.create (
-# 	[
-# 		{
-# 			name: "Full Membership",
-# 			price: 49,
-# 			sessions_per_week: "3 sessions per week",
-# 			session_times: "6am or 6:45am Mon / Wed / Fri",
-# 			description: "Perfect if you love the extra motivation and commitment of a group environment or training with friends.",
-# 			pricing_id: 1
-# 		},
-# 		{
-# 			name: "Partial Membership",
-# 			price: 33,
-# 			sessions_per_week: "2 sessions per week",
-# 			session_times: "(Pick two): 6am or 6:45am Mon / Wed / Fri",
-# 			description: "Perfect if you can’t quite commit to three sessions per week, but still want the extra motivation of training with a group.",
-# 			pricing_id: 1
-# 		}
-# 	]
-# )
+Plan.create (
+	[
+		{
+			name: "Full Membership",
+			price: 49,
+			sessions_per_week: "3 sessions per week",
+			session_times: "6am or 6:45am Mon / Wed / Fri",
+			description: "Perfect if you love the extra motivation and commitment of a group environment or training with friends.",
+			pricing_id: 1
+		},
+		{
+			name: "Partial Membership",
+			price: 33,
+			sessions_per_week: "2 sessions per week",
+			session_times: "(Pick two): 6am or 6:45am Mon / Wed / Fri",
+			description: "Perfect if you can’t quite commit to three sessions per week, but still want the extra motivation of training with a group.",
+			pricing_id: 1
+		}
+	]
+)
 
-# Pass.create(
-# 	[
-# 		{
-# 			name: "Ten Class Pass",
-# 			total_cost: "$180 for ten classes",
-# 			class_cost: "$18 per class",
-# 			pricing_id: 1
-# 		},
-# 		{
-# 			name: "Five Class Pass",
-# 			total_cost: "$100 for ten classes",
-# 			class_cost: "$20 per class",
-# 			pricing_id: 1
-# 		},
-# 		{
-# 			name: "Drop-In Class",
-# 			total_cost: "$28 per class",
-# 			class_cost: "",
-# 			pricing_id: 1
-# 		}
-# 	]
-# )
+Pass.create(
+	[
+		{
+			name: "Ten Class Pass",
+			total_cost: "$180 for ten classes",
+			class_cost: "$18 per class",
+			pricing_id: 1
+		},
+		{
+			name: "Five Class Pass",
+			total_cost: "$100 for ten classes",
+			class_cost: "$20 per class",
+			pricing_id: 1
+		},
+		{
+			name: "Drop-In Class",
+			total_cost: "$28 per class",
+			class_cost: "",
+			pricing_id: 1
+		}
+	]
+)
 
 blog_posts = 
 	[
@@ -107,7 +107,7 @@ blog_posts =
 			title: "How To – Wrist Maintainence",
 			body: "This is a guest post by one of our amazing trainers Nikki. Nikki is a super passionate trainer, and is a huge advocate for functional movement. She recorded this video for our members, after hearing complaints of wrist pain etc, in normal movement patterns such as push ups and bear crawls. This isn't just for people who are into crawling on the ground, in this day and age we all need to be looking after our wrists - especially if your mum, with all the lifting you do. Don't forget to share with anyone who could benefit from this short, sweet and actionable video.",
 			image: "",
-			blog_id: 1
+			video: "https://vimeo.com/194449016"
 		},
 		{
 			title: "How To Activate Your Core",
@@ -123,7 +123,7 @@ blog_posts =
 			
 			If you do have trouble working out and/or how to activate your core, seeing a womens' physio can be immensely helpful.",
 			image: "",
-			blog_id: 1
+			video: "https://vimeo.com/180393399"
 		},
 		{
 			title: "Your Official Guide To Staying Fit This Winter",
@@ -159,7 +159,7 @@ blog_posts =
 			
 			Use this opportunity to batch foods too. We make 6-8 portions of veggie curries or soups at the same time and use this for busy evenings, or when the couch is looking extra comfy for some snuggles! It means we always have healthy meals at hand.",
 			image: "",
-			blog_id: 1
+			video: ""
 		},
 		{
 			title: "Learning To Listen To Your Body (It Will Make You Thrive!)",
@@ -173,7 +173,7 @@ blog_posts =
 			
 			Watch it below, and don't forget to share with someone who also needs to hear this!",
 			image: "",
-			blog_id: 1
+			video: "https://vimeo.com/180253998"
 		},
 		{
 			title: "4 Of Our Favourite Fitness And Wellness Podcasts",
@@ -203,7 +203,7 @@ blog_posts =
 			
 			Again a amazing one for mindful walks she’ll inspire you to ditch your mean girl, uplevel your thinking, health and wellbeing.",
 			image: "",
-			blog_id: 1
+			video: ""
 		},
 		{
 			title: "10 Healthy Foods To Calm And Destress",
@@ -229,7 +229,7 @@ blog_posts =
 			Leafy Greens - rich in folate (B9) which is important in the production of mood regulation neurotransmitters such as serotonin and dopamine.
 			So the next time you are stressed out and tempted to reach for 'another' coffee and sugar laden snack think about how much better you will feel when you dampen down the stress levels and give your body a chance to recalibrate.",
 			image: "",
-			blog_id: 1
+			video: ""
 		},
 		{
 			title: "Do You Want To Supercharge Your Fitness And Health Results? Do This One Thing…",
@@ -242,7 +242,7 @@ blog_posts =
 			 How do you do this?
 			Listen to the short audio blog and discover the one trick that will help you supercharge your results....",
 			image: "",
-			blog_id: 1
+			video: ""
 		},
 		{
 			title: "5 Guidelines To Maintain Your Weightloss",
@@ -250,7 +250,7 @@ blog_posts =
 
 			We see it happening again and again, so today we're sharing with you the 5 rules you MUST follow for sustainable weight loss, and sharing with you.",
 			image: "",
-			blod_id: 1
+			video: ""
 		},
 		{
 			title: "4 Things You Need To Hear If Your Currently Trying To Lose Weight",
@@ -266,7 +266,7 @@ blog_posts =
 			Insert your own feeling of choice here.
 			Today we wanted to share with you 4 things you MUST know before you achieve your goal weight.",
 			image: "",
-			blog_id: 1
+			video: ""
 		},
 		{
 			title: "Increasing Your Happiness",
@@ -280,7 +280,7 @@ blog_posts =
 			
 			Most likely you haven’t even realised this has happened, as we do this consistently.",
 			image: "",
-			blog_id: 1
+			video: ""
 		}
 	]
 
@@ -295,7 +295,7 @@ blog_photos = blog_photo_filenames.map do |photo|
 end
 
 full_blogposts = blog_posts.map.with_index do |blog_post, index|
-	Post.new(title: blog_posts[index][:title], body: blog_posts[index][:body], blog_id: 1)
+	Post.new(title: blog_posts[index][:title], body: blog_posts[index][:body], blog_id: 1, video: blog_posts[index][:video])
 end
 
 full_blogposts.each.with_index do |full_blogpost, index|
