@@ -9,15 +9,27 @@ class PostsController < ApplicationController
     render json: @posts
   end
 
+  def featured
+    @posts = Post.all.order(:created_at)[0..3]
+
+    @posts.each do |post|
+      if post.image_url.nil? and (not post.image.url.nil?)
+        post.image_url = post.image.url
+      end
+    end
+
+    render json: @posts
+  end
+
   # GET /posts/1
   def show
+    @post.image_url = @post.image.url
     render json: @post
   end
 
   # POST /posts
   def create
     @post = Post.new(post_params)
-    # raise params.inspect
     if @post.save
       render json: @post, status: :created
     else
@@ -47,6 +59,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :blog_id, :image)
+      params.permit(:title, :body, :blog_id, :image, :video, :image_url)
     end
 end

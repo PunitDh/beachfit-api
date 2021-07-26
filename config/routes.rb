@@ -17,6 +17,14 @@ Rails.application.routes.draw do
   end
 
   resources :testimonials
+
   get "/testimonials/sample/:number", to: "testimonials#sample"
+
+
+  get "/blogs/1/featured-posts", to: "posts#featured"
+
 end
+
+end
+
 
