@@ -1,6 +1,6 @@
 class PricingsController < ApplicationController
   before_action :set_pricing, only: [:show, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  # before_action :authenticate_user!, except: [:index, :show]
 
   # GET /pricings
   def index

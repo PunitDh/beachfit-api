@@ -1,6 +1,6 @@
 class PassesController < ApplicationController
 	before_action :set_pass, only: [:show, :update, :destroy]
-	before_action :authenticate_user!, except: [:index, :show]
+	# before_action :authenticate_user!, except: [:index, :show]
   
 	# GET /pass
 	def index
