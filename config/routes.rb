@@ -20,4 +20,8 @@ Rails.application.routes.draw do
 
   get "/blogs/1/featured-posts", to: "posts#featured"
 
+  get "/settings", to: "settings#show"
+
+  patch "/settings", to: "settings#update"
+
 end

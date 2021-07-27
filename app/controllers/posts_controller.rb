@@ -6,17 +6,15 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order(:created_at)
 
+    attach_image
+
     render json: @posts
   end
 
   def featured
     @posts = Post.all.order(:created_at)[0..3]
 
-    @posts.each do |post|
-      if post.image_url.nil? and (not post.image.url.nil?)
-        post.image_url = post.image.url
-      end
-    end
+    attach_image
 
     render json: @posts
   end
@@ -60,5 +58,13 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.permit(:title, :body, :blog_id, :image, :video, :image_url)
+    end
+
+    def attach_image
+      @posts.each do |post|
+        if post.image_url.nil? and (not post.image.url.nil?)
+          post.image_url = post.image.url
+        end
+      end
     end
 end
