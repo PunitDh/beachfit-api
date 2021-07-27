@@ -2,19 +2,19 @@ class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :update, :destroy]
   # before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /plans
+  # shows all pricing memberships
   def index
     @plans = Plan.all.order(:id)
 
     render json: @plans
   end
 
-  # GET /plans/1
+  # shows all pricing memberships
   def show
     render json: @plan
   end
 
-  # POST /plans
+  # create new pricing memberships
   def create
     @plan = Plan.new(plan_params)
 
@@ -25,7 +25,7 @@ class PlansController < ApplicationController
     end
   end
 
-  # PATCH/PUT /plans/1
+  # edit existing pricing memberships
   def update
     if @plan.update(plan_params)
       render json: @plan
@@ -34,7 +34,7 @@ class PlansController < ApplicationController
     end
   end
 
-  # DELETE /plans/1
+  # delete pricing memberships
   def destroy
     @plan.destroy
   end

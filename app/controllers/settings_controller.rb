@@ -1,10 +1,12 @@
 class SettingsController < ApplicationController
 	before_action :set_settings
 
+	# show settings on dashboard after admin login
 	def show
 		render json: @setting
 	end
 
+	# update settings on dashboard after admin login
 	def update
 		if @setting.update(setting_params)
 		  render json: @setting

@@ -2,19 +2,19 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
   # before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /items
+  # shows all FAQ question and answers
   def index
     @items = Item.all.order(:id)
 
     render json: @items
   end
 
-  # GET /items/1
+  # shows all FAQ question and answers
   def show
     render json: @item
   end
 
-  # POST /items
+  # create new FAQ question and answer
   def create
     @item = Item.new(item_params)
 
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /items/1
+  # edit existing FAQ question and answer
   def update
     if @item.update(item_params)
       render json: @item
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
+  # delete FAQ question and answer
   def destroy
     @item.destroy
   end

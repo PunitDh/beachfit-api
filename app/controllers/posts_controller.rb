@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
   # before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /posts
+  # shows all blogs posts
   def index
     @posts = Post.all.order(:created_at)
 
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     render json: @posts
   end
 
+  # shows featured blog post on top of page
   def featured
     @posts = Post.all.order(:created_at)[0..3]
 
@@ -19,13 +20,13 @@ class PostsController < ApplicationController
     render json: @posts
   end
 
-  # GET /posts/1
+  # shows all blogs posts
   def show
     @post.image_url = @post.image.url
     render json: @post
   end
 
-  # POST /posts
+  # create a new blog post
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1
+  # edit existing blog post
   def update
     if @post.update(post_params)
       render json: @post
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
+  # delete blog post
   def destroy
     @post.destroy
   end

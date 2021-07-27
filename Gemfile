@@ -37,14 +37,19 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# used for authorisation
 gem 'devise'
 
+# stores config in env variables
 gem 'figaro'
 
+# used for authorisation
 gem 'devise-jwt'
 
+# used for image storage
 gem "aws-sdk-s3", "~> 1.96"
 
+# used for testing
 gem 'faker'
 gem 'factory_bot_rails'
 gem 'rspec-rails'

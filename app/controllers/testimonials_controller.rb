@@ -1,13 +1,14 @@
 class TestimonialsController < ApplicationController
   before_action :set_testimonial, only: [:show, :update, :destroy]
 
-  # GET /testimonials
+  # shows all testimonials 
   def index
     @testimonials = Testimonial.all
 
     render json: @testimonials
   end
 
+  # selects testimonials at random to display, changed on refresh
   def sample
     @testimonials = Testimonial.all
 
@@ -27,12 +28,12 @@ class TestimonialsController < ApplicationController
     render json: selected
   end
 
-  # GET /testimonials/1
+  # shows all testimonials 
   def show
     render json: @testimonial
   end
 
-  # POST /testimonials
+  # create new testimonial
   def create
     @testimonial = Testimonial.new(testimonial_params)
 
@@ -43,7 +44,7 @@ class TestimonialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /testimonials/1
+  # update testimonials
   def update
     if @testimonial.update(testimonial_params)
       render json: @testimonial
@@ -52,7 +53,7 @@ class TestimonialsController < ApplicationController
     end
   end
 
-  # DELETE /testimonials/1
+  # delete testimonials
   def destroy
     @testimonial.destroy
   end

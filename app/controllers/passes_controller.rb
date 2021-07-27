@@ -2,19 +2,19 @@ class PassesController < ApplicationController
 	before_action :set_pass, only: [:show, :update, :destroy]
 	# before_action :authenticate_user!, except: [:index, :show]
   
-	# GET /pass
+	# shows all pricing class passes
 	def index
 	  @pass = Pass.all.order(:id)
   
 	  render json: @pass
 	end
   
-	# GET /pass/1
+	# shows all pricing class passes
 	def show
 	  render json: @pass
 	end
   
-	# POST /pass
+	# create new pricing class passes
 	def create
 	  @pass = Pass.new(pass_params)
   
@@ -25,7 +25,7 @@ class PassesController < ApplicationController
 	  end
 	end
   
-	# PATCH/PUT /pass/1
+	# edit existing pricing class passes
 	def update
 	  if @pass.update(pass_params)
 		render json: @pass
@@ -34,7 +34,7 @@ class PassesController < ApplicationController
 	  end
 	end
   
-	# DELETE /pass/1
+	# delete pricing class passes
 	def destroy
 	  @pass.destroy
 	end

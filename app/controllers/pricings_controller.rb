@@ -2,19 +2,19 @@ class PricingsController < ApplicationController
   before_action :set_pricing, only: [:show, :update, :destroy]
   # before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /pricings
+  # shows all pricing 
   def index
     @pricings = Pricing.all
 
     render json: @pricings
   end
 
-  # GET /pricings/1
+  # shows all pricing 
   def show
     render json: @pricing
   end
 
-  # POST /pricings
+  # create new pricing
   def create
     @pricing = Pricing.new(pricing_params)
 
@@ -25,7 +25,7 @@ class PricingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pricings/1
+  # edit existing pricing
   def update
     if @pricing.update(pricing_params)
       render json: @pricing
@@ -34,7 +34,7 @@ class PricingsController < ApplicationController
     end
   end
 
-  # DELETE /pricings/1
+  # delete pricing
   def destroy
     @pricing.destroy
   end

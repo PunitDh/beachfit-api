@@ -2,19 +2,19 @@ class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :update, :destroy]
   # before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /faqs
+  # shows all FAQs
   def index
     @faqs = Faq.all
 
     render json: @faqs
   end
 
-  # GET /faqs/1
+  # shows all FAQs
   def show
     render json: @faq
   end
 
-  # POST /faqs
+  # create a new FAQ
   def create
     @faq = Faq.new(faq_params)
 
@@ -25,7 +25,7 @@ class FaqsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /faqs/1
+  # edit existing FAQ
   def update
     if @faq.update(faq_params)
       render json: @faq
@@ -34,7 +34,7 @@ class FaqsController < ApplicationController
     end
   end
 
-  # DELETE /faqs/1
+  # delete FAQ
   def destroy
     @faq.destroy
   end
